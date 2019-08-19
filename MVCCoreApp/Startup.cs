@@ -6,10 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using RequestPipeline.Extensions;
-using RequestPipeline.Middlewares;
 
-namespace RequestPipeline
+namespace MVCCoreApp
 {
     public class Startup
     {
@@ -17,7 +15,7 @@ namespace RequestPipeline
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-          
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,26 +25,18 @@ namespace RequestPipeline
             {
                 app.UseDeveloperExceptionPage();
             }
-          
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("<div>Hello</div>");
-                await next.Invoke();
-                await context.Response.WriteAsync("<div>Return 1</div>");
-            }
-            );
 
-            app.UseSimpleMiddleware();
+            app.UseMvcWithDefaultRoute();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World from the Middleware 1!");
-            });
-        }
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
 
-        private Func<RequestDelegate, RequestDelegate> async(object context, object next)
-        {
-            throw new NotImplementedException();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
         }
     }
 }

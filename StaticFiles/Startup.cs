@@ -6,10 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using RequestPipeline.Extensions;
-using RequestPipeline.Middlewares;
 
-namespace RequestPipeline
+namespace StaticFiles
 {
     public class Startup
     {
@@ -27,26 +25,13 @@ namespace RequestPipeline
             {
                 app.UseDeveloperExceptionPage();
             }
-          
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("<div>Hello</div>");
-                await next.Invoke();
-                await context.Response.WriteAsync("<div>Return 1</div>");
-            }
-            );
 
-            app.UseSimpleMiddleware();
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World from the Middleware 1!");
+                await context.Response.WriteAsync("Hello World!");
             });
-        }
-
-        private Func<RequestDelegate, RequestDelegate> async(object context, object next)
-        {
-            throw new NotImplementedException();
         }
     }
 }

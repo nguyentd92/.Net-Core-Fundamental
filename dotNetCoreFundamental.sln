@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestPipeline", "RequestP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticFiles", "StaticFiles\StaticFiles.csproj", "{54761689-D1ED-4287-894E-DF1E17C949ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCCoreApp", "MVCCoreApp\MVCCoreApp.csproj", "{82D33221-7ACA-4784-95DC-D1E75FC02F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCCoreApp", "MVCCoreApp\MVCCoreApp.csproj", "{82D33221-7ACA-4784-95DC-D1E75FC02F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular8Client", "Angular8Client\Angular8Client.csproj", "{C2541223-B7AE-4833-9240-0EB247A66172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular8Client", "Angular8Client\Angular8Client.csproj", "{C2541223-B7AE-4833-9240-0EB247A66172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPImongoDB", "WebAPImongoDB\WebAPImongoDB.csproj", "{AA9BC660-36D2-4FD1-AC11-8FA8A29E9CDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C2541223-B7AE-4833-9240-0EB247A66172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2541223-B7AE-4833-9240-0EB247A66172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2541223-B7AE-4833-9240-0EB247A66172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9BC660-36D2-4FD1-AC11-8FA8A29E9CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9BC660-36D2-4FD1-AC11-8FA8A29E9CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9BC660-36D2-4FD1-AC11-8FA8A29E9CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9BC660-36D2-4FD1-AC11-8FA8A29E9CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
